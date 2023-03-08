@@ -2,8 +2,6 @@
 // Prezzo biglietto in base a Costo per km €0.21
 const pricePerKm = 0.21
 
-
-
 // INPUT
 // Chiedere all'utente numero di chilometri
 const userDistance = parseInt(prompt ("Quanti chilometri devi percorrere?"));
@@ -12,34 +10,26 @@ const userDistance = parseInt(prompt ("Quanti chilometri devi percorrere?"));
 const userAge = parseInt(prompt ("Quanti anni hai?"));
 console.log(userDistance, userAge);
 
-if(isNaN(userDistance, userAge) === true) {
-    console.log("Per favore, inserisci un valore numerico e ricarica la pagina. Grazie!");
-} 
-// da mettere nell'OUTPUT
 
 
 // ELABORAZIONE
-const fullPrice = (userDistance * pricePerKm);
-console.log(fullPrice);
+let price = (userDistance * pricePerKm);
+console.log(price);
+let message = 'Il totale da pagare è: €';
 
 if(userAge < 18) {
-    let = fullPrice - discJunior 
-} else if( userAge >= 65) {
-    let = fullPrice - discSenior
-} else {
-    let = fullPrice
+    price = price - (price / 100 * 20);
+    message = 'Il totale da pagare (con sconto Junior applicato) è: €'; 
+} else if(userAge >= 65) {
+    price = price - (price / 100 * 40);
+    message = 'Il totale da pagare (con sconto Senior applicato) è: €'
 }
 
-// Sconto 20% <18 anni
-const discJunior = (fullPrice / 100 * 20);
-// Sconto 40% >65 anni
-const discSenior = (fullPrice / 100 * 40);
-
-
-
-
-
-
+console.log(message, price);
 
 // OUTPUT
-// Prezzo finale con due decimali dopo la virgola
+document.getElementById("result").innerHTML = message + price.toFixed(2);
+if(isNaN(userDistance && userAge) === true) {
+    console.log("Per favore, inserisci solo valori numerici e ricarica la pagina. Grazie!");
+    document.getElementById("result").innerHTML = "Per favore, inserisci solo valori numerici e ricarica la pagina. Grazie!"
+} 

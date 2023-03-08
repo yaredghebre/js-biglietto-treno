@@ -1,0 +1,13 @@
+body {
+    background-color: lightgoldenrodyellow;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#result {
+    width: 50%;
+    margin: 100px auto;
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+    background-color: rgba(255, 0, 0, 0.595);
+}
